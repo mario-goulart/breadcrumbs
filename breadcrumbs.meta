@@ -2,7 +2,7 @@
 
 ((egg "breadcrumbs.egg")
  (synopsis "Breadcrumbs for web pages")
- (author "<a href=\"http://chicken.wiki.br/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
+ (author "<a href=\"http://wiki.call-cc.org/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
  (license "BSD")
  (category web)
  (files "breadcrumbs.scm" "breadcrumbs.setup" "breadcrumbs.html"))
