@@ -4,4 +4,5 @@
  (synopsis "Breadcrumbs for web pages")
  (author "<a href=\"http://wiki.call-cc.org/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
  (license "BSD")
- (category web))
+ (category web)
+ (files "test.scm" "breadcrumbs.release-info" "breadcrumbs.scm" "breadcrumbs.setup" "breadcrumbs.meta"))
