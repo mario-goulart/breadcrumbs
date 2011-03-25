@@ -5,4 +5,4 @@
  (author "<a href=\"http://chicken.wiki.br/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
  (license "BSD")
  (category web)
- (files "breadcrumbs.scm" "breadcrumbs.setup" "breadcrumbs.html"))
+ (files "test.scm" "breadcrumbs.scm" "breadcrumbs.setup" "breadcrumbs.meta"))
