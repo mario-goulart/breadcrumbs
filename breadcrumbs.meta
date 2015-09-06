@@ -1,8 +1,5 @@
-;;; breadcrumbs.meta -*- scheme -*-
-
-((egg "breadcrumbs.egg")
- (synopsis "Breadcrumbs for web pages")
- (author "<a href=\"http://wiki.call-cc.org/users/mario-domenech-goulart\">Mario Domenech Goulart</a>")
+;; -*- scheme -*-
+((synopsis "Breadcrumbs for web pages")
+ (author "Mario Domenech Goulart")
  (license "BSD")
- (category web)
- (files "test.scm" "breadcrumbs.release-info" "breadcrumbs.scm" "breadcrumbs.setup" "breadcrumbs.meta"))
+ (category web))
