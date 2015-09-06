@@ -6,4 +6,4 @@
 (install-extension
  'breadcrumbs
  '("breadcrumbs.so" "breadcrumbs.import.so")
- '((version "0.1")))
+ '((version "1.0")))
