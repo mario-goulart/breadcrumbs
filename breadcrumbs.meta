@@ -2,4 +2,5 @@
 ((synopsis "Breadcrumbs for web pages")
  (author "Mario Domenech Goulart")
  (license "BSD")
- (category web))
+ (category web)
+ (test-depends test))

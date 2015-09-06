@@ -5,15 +5,14 @@
    breadcrumbs-home-label
    breadcrumbs-separator
    breadcrumbs-link
-   debug-breadcrumbs
    breadcrumbs
 
    ;; procedures
    add-breadcrumb!
    get-breadcrumb)
 
-(import scheme chicken data-structures extras)
-(use files srfi-1)
+(import scheme chicken)
+(use data-structures extras files srfi-1)
 
 (define breadcrumbs-home-path (make-parameter "/"))
 
@@ -21,9 +20,7 @@
 
 (define breadcrumbs (make-parameter '()))
 
-(define breadcrumbs-separator (make-parameter " &gt; "))
-
-(define debug-breadcrumbs (make-parameter #f))
+(define breadcrumbs-separator (make-parameter " > "))
 
 (define (path-join parts)
   (string-intersperse parts "/"))
@@ -38,7 +35,7 @@
 (define breadcrumbs-link
   (make-parameter
    (lambda (uri text)
-     (string-append "<a href='" uri "'>" text "</a>"))))
+     `(a (@ (href ,uri)) ,text))))
 
 (define (add-breadcrumb! path title)
   (let ((diff (path-diff path)))
@@ -47,18 +44,9 @@
 
 (define (get-breadcrumb path)
   (let ((diff (path-diff path)))
-
-    (when (debug-breadcrumbs)
-      (print "Current breadcrumbs table:")
-      (pp (breadcrumbs))
-      (display "\nRequested path: ")
-      (pp path)
-      (display "Diff: ")
-      (pp diff))
-
     (if (null? diff)
-        ""
-        (string-intersperse
+        '()
+        (intersperse
          (append
           (list ((breadcrumbs-link) (breadcrumbs-home-path) (breadcrumbs-home-label)))
           (reverse
