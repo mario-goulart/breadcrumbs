@@ -1,8 +1,9 @@
-;;; breadcrumbs.setup -*- scheme -*-
+;; -*- scheme -*-
 
-(compile -s -O2 -d1 -j breadcrumbs breadcrumbs.scm)
-(compile -s -O2 -d1 breadcrumbs.import.scm)
+(compile -s -O3 -d1 -j breadcrumbs breadcrumbs.scm)
+(compile -s -O3 -d1 breadcrumbs.import.scm)
 
-(install-extension 'breadcrumbs
-                   '("breadcrumbs.so" "breadcrumbs.import.so")
-                   '((version 0.1)))
+(install-extension
+ 'breadcrumbs
+ '("breadcrumbs.so" "breadcrumbs.import.so")
+ '((version "0.1")))
