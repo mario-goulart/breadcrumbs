@@ -1,4 +1,12 @@
-(use breadcrumbs test)
+(import scheme)
+(cond-expand
+  (chicken-4
+   (import chicken)
+   (use breadcrumbs test))
+  (chicken-5
+   (import breadcrumbs test))
+  (else
+   (error "Unsupported CHICKEN version.")))
 
 (test-begin "breadcrumbs")
 

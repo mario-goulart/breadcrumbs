@@ -1,0 +1,11 @@
+;;; -*- scheme -*-
+((synopsis "Breadcrumbs for web pages")
+ (author "Mario Domenech Goulart")
+ (license "BSD")
+ (category web)
+ (dependencies srfi-1)
+ (test-dependencies test)
+ (component-options
+  (csc-options "-O3" "-d1"))
+ (components
+   (extension breadcrumbs)))

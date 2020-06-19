@@ -11,8 +11,19 @@
    add-breadcrumb!
    get-breadcrumb)
 
-(import scheme chicken)
-(use data-structures extras files srfi-1)
+(import scheme)
+(cond-expand
+  (chicken-4
+   (import chicken)
+   (use data-structures extras files srfi-1))
+  (chicken-5
+   (import (chicken base)
+           (chicken pathname)
+           (chicken string))
+   (import srfi-1))
+  (else
+   (error "Unsupported CHICKEN version.")))
+
 
 (define breadcrumbs-home-path (make-parameter "/"))
 
