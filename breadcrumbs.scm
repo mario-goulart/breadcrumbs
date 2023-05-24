@@ -36,6 +36,11 @@
 (define (path-join parts)
   (string-intersperse parts "/"))
 
+(define (ensure-web-dir path)
+  (if (eq? (string-ref path (sub1 (string-length path))) #\/)
+      path
+      (string-append path "/")))
+
 (define (path-split path)
   (string-split path "/"))
 
@@ -46,7 +51,7 @@
 (define breadcrumbs-link
   (make-parameter
    (lambda (uri text)
-     `(a (@ (href ,uri)) ,text))))
+     `(a (@ (href ,(ensure-web-dir uri))) ,text))))
 
 (define (add-breadcrumb! path title)
   (let ((diff (path-diff path)))
